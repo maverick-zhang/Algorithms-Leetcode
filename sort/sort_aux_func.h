@@ -35,4 +35,16 @@ bool if_sorted(T arr[], int n)
 }
 
 
+//生成随机数组
+template <typename T>
+T * gen_random_array(T arr[], int n, int range)
+{
+    std::srand(time(nullptr));
+    for (int i = 0; i < n ; ++i) {
+        arr[i] = rand() % range;
+    }
+    return arr;
+}
+
+
 #endif //ALGORITHMS_SORT_AUX_FUNC_H

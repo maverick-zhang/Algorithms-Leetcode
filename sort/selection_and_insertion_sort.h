@@ -6,7 +6,7 @@
 #define ALGORITHMS_SELECTION_AND_INSERTION_SORT_H
 
 
-
+#include <algorithm>
 
 //选择排序：循环遍历数组，找出未排序部分的最小值，并与未排序部分的第一个值进行交换
 //[0. i)为已排序部分，[i, n)为尚未进行排序的部分
@@ -40,10 +40,14 @@ void insertion_sort(T arr[], int n)
         temp = arr[i];
         for (j = i; j > 0 ; j --)
         {
-            if (arr[i] < arr[j - 1])
+            if (temp < arr[j - 1])
                 arr[j] = arr[j - 1];
+            else
+            {
+                arr[j] = temp;
+                break;
+            }
         }
-        arr[j] = temp;
     }
 }
 

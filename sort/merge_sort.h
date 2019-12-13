@@ -80,11 +80,15 @@ template <typename T>
 void merge_sort_bottom_up(T arr[], int n)
 {
     int size = 1; //每一步merge半区间的元素数量, [i, i+size-1], [i + size, i + 2 * size -1]
-    for (int i = 0; (i + size) < n; i += 2*size)   //若i+size>=n即此时已经没有右半区，无需merge
+    for (size = 1; size <= n; size *=2 )
     {
-        int right;
-        right = std::min(n-1, 2*size-1)      //保证右区间的末尾在范围之内。
-        __merge_left_and_right(arr, i, right, i+size-1);
+        for (int i = 0; (i + size) < n; i += 2*size)   //若i+size>=n即此时已经没有右半区，无需merge
+        {
+            int right;
+            right = std::min(n-1, i + 2*size-1);    //保证右区间的末尾在范围之内。
+            __merge_left_and_right(arr, i, right, i+size-1);
 
+        }
     }
+
 }
