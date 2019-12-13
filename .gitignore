@@ -4,3 +4,4 @@ CMakeLists.txt
 *.out
 .idea
 main.cpp
+*.xml
