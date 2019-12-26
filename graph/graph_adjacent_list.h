@@ -149,8 +149,7 @@ public:
         index = 0;
         if (g[v].empty())
             return -1;
-        return g[v][index];  //TODO:明天继续搞图论
-    }
+        return g[v][index];
 
     bool end()
     {
