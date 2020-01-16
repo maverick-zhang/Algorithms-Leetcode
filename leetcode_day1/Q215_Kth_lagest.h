@@ -20,7 +20,7 @@ using namespace std;
 class Solution {
 public:
 
-    //使用三个指针[l, lt],[lt+1, i), [gt, r]分别代表小于val的部分，等于val的部分，大于val的部分。
+    //使用三个指针[l, lt),[lt, i), [gt, r]分别代表小于val的部分，等于val的部分，大于val的部分。
 
     static int __partition(vector<int> & nums, int l, int r,  int k)
     {
@@ -48,11 +48,7 @@ public:
         }
         swap(nums[l], nums[lt]);
         if (gt + 1 <= k)
-        {
             return __partition(nums, gt, r, k);
-
-        }
-
         else if (lt >= k)
             return __partition(nums, l, lt - 1, k);
         else
@@ -70,13 +66,9 @@ public:
         srand(time(nullptr));
         if (k<0 or k >n)
             exit(EXIT_FAILURE);
-        k = (nums.size()-k+1);
+        k = nums.size()-k+1;
         int num = __partition(num_copy, 0, n-1, k);
-
         return num;
-
-
-
     }
 };
 
