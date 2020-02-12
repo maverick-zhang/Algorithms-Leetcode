@@ -27,5 +27,5 @@ def findLadders(self, beginWord: str, endWord: str, wordList: list) -> list:
             break
         forward = tmp
     return res
-# TODO:理解这个题解
+
 
