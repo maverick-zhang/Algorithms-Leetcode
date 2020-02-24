@@ -19,7 +19,7 @@ class Solution:
         res= []
         self.__combination(n, k, 1, res)
         return self.res
-
+  
 
 if __name__ == '__main__':
     s = Solution()
